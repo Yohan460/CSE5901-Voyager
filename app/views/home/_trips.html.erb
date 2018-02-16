@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Boat</th>
+      <th>Departure Date</th>
+      <th>Arrival Date</th>
+      <th>Departure Port</th>
+      <th>Arrival Port</th>
+      <th>Trip Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @trips.each do |trip| %>
+    <tr>
+      <td><%= trip.boat.Name %></td>
+      <td><%= trip.DeptDate %></td>
+      <td><%= trip.ArrDate %></td>
+      <td><%= trip.DeptPort.location %></td>
+      <td><%= trip.ArrPort.location %></td>
+      <td><%= trip.description %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

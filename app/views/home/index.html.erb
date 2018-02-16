@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>Welcome to Voyagr <%= image_tag("ship.png",size: 150, align: "right")%></h1>
+    <p>Your Journey Begins Here</p>
+  </div>
+   
+<div class = "row-fluid" align = "center">
+     <a href="/rooms">
+   <%= image_tag("rooms.jpg",width:500, height:250, :style => 'border: 5px ridge #3267bc')%>
+</a> 
+     <a href="/trips">
+   <%= image_tag("BeachFixed.jpg",width:500 ,height:250, :style=> 'border: 5px ridge #3267bc')%>
+</a>
+     <a href="/home/show">
+   <%= image_tag("ResShipFix.jpg",width:500, height:250 , :style=> 'border: 5px ridge #3267bc')%>
+</a>
+</div>
+
+  <div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8" style="text-align:center;">
+
+    <% if user_signed_in? && @reservations.length > 0 %>
+      <h2>My Reservations</h2>
+      <%= render "reservations" %>
+    <% end %>
+
+    <h2>Future Cruises</h2>
+    <%= render "trips" %>
+
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <h2>Users</h2>
+        <%= render "users" %>
+      <% end %>
+    <% end %>
+
+    </div>
+    <div class="col-xs-2"></div>
+  </div>
+</div>

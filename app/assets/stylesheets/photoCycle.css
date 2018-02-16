@@ -1,0 +1,21 @@
+/** sets up CSS for Photocycle, hides cycling photos**/
+
+#photoContainerA {
+    position: relative !important;
+}
+
+#photoContainerB {
+    position: relative !important;
+}
+
+#photoContainerC {
+    position: relative !important;
+}
+.rotating_Image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow:hidden;
+    objet-fit:container;
+}

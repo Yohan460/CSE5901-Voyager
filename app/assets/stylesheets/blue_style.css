@@ -1,0 +1,191 @@
+/** Stylesheet for blue/orange theme of site
+Contributor: Frank Evers
+Setup CSS
+Andrew Storch:
+Made some tweaks to made things more readable in tables
+ **/
+
+/** Ensures background takes up entire page **/
+html{
+    min-height:100%;/* make sure it is at least as tall as the viewport */
+    position:relative;
+}
+
+/** makes error messages visible on background **/
+li{
+	color:black;
+}
+
+/** centers trip heading above photocycle **/
+#trips{
+	text-align:center;
+}
+
+/**makes input visible **/
+select{
+	color:black !important;
+}
+
+/** Sets background and font of site **/
+html body {
+  background:linear-gradient(#0a046b, #ffb366);
+  font-family: "Arial Bold", "Arial", sans-serif;
+  color:white;  
+}
+
+/** Sets the size and alignment of photo cycle container **/
+#photoDiv {   
+    width: 30%px;
+    margin-top:90px;
+    margin-left: 0 auto; 
+    margin-right: 0 auto;
+
+    display:inline;
+     text-align: center;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+
+/** Sets up border around images, keeps images inside border **/
+#photoDiv span {
+    padding:0 auto;
+    overflow:hidden;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    text-align: center;
+    zoom: 1;
+    border: 5px ridge #0a046b;
+}
+
+/** overrides jumbotron theme to show background **/
+.jumbotron {
+    background-color:transparent !important;
+}
+
+/** Sets table border **/
+table{
+    border:2px ridge #0a046b !important;
+    background-color: white;
+}
+
+/** sets text in table to be visible **/
+table tr{
+  color:black;
+  text-align:left;
+}
+
+/** makes headers visible on background **/
+table th{
+ color:black;
+}
+
+/** change link colors **/
+a:link{
+ color:white !important;
+}
+a:visited{
+  color:white;
+}
+
+
+td a:link{
+ color:black !important;
+}
+td a:visited{
+  color:black;
+}
+input{
+  color:black !important;
+}
+
+/** Bootstrap nav bar colorization ***/
+.navbar-default {
+  background-color: #0a046b;
+  border-color: #60a6d4;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #0a046b;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #ffffff;
+  background-color: #60a6d4;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
+  background-color: #60a6d4;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  background-color: #60a6d4;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #60a6d4;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #60a6d4;
+}
+.navbar-default .navbar-toggle {
+  border-color: #60a6d4;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #60a6d4;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #60a6d4;
+  }
+}

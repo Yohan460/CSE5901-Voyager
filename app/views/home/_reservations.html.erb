@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Room</th>
+        <th>Ports</th>
+        <th>Trip Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @reservations.each do |reservation| %>
+        <tr>
+          <td><%= reservation.user.fname + " "  + reservation.user.lname%></td>
+          <td><%= reservation.room.Name %></td>
+          <td><%= reservation.trip.DeptPort.location %> -> <%= reservation.trip.ArrPort.location %></td>
+          <td><%= reservation.trip.DeptDate %> - <%= reservation.trip.ArrDate %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

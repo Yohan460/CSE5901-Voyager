@@ -1,0 +1,56 @@
+<!-- Contributions: -->
+<!-- Andrew Storch: File creation, nav bar, user and admin functionality hiding -->
+<!-- Frank Evers: Addition of CSS and JS -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HackThePlanetRailsApp</title>
+    <%= csrf_meta_tags %>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'blue_style.css' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "jquery", "application" %>
+    <%= javascript_include_tag "cycle" %>
+    <%= javascript_include_tag "photoCycleJs", "data-turbolinks-track" => true  %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Voyagr</a>
+        </div>
+        <% if user_signed_in? %>
+            <ul class="nav navbar-nav">
+              <li><a href="/trips">Book Your Trip</a></li>
+              <li><a href="/users/edit">My Profile</a></li>
+              <li><a href="/home/show">My Trips</a></li>
+              <% if user_signed_in? && current_user.admin? %>
+              <li><a href="/boats">Boat Control</a></li>
+              <li><a href="/rooms">Room Control</a></li>
+              <li><a href="/trips">Trip Control</a></li>
+              <li><a href="/ports">Port Control</a></li>
+              <% end %>
+            </ul>
+        <% end %>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+              <li><a href="#"><span class="glyphicon"></span>Welcome <%= current_user.fname%>!</a></li>
+              <li><a href="/users/sign_out"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+          <% else %>
+              <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+              <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+  </body>
+</html>

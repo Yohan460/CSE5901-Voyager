@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+ <%= stylesheet_link_tag "photoCycle.css" %>
+<h1>Ports</h1>
+
+<table class= "table table-striped">
+  <thead>
+    <tr>
+      <th>Port ID</th>
+      <th>Location</th>
+      <th>Country</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ports.each do |port| %>
+      <tr>
+        <td><%= port.id %></td>
+        <td><%= port.location %></td>
+        <td><%= port.country %></td>
+        <td><%= port.description %></td>
+        <% if user_signed_in? && current_user.admin? %>
+          <td><%= link_to 'Show', port %></td>
+          <td><%= link_to 'Edit', edit_port_path(port) %></td>
+          <td><%= link_to 'Destroy', port, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'New Port', new_port_path %>
+<% end %>

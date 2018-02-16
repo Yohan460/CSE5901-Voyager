@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: MyString
+  room: 1
+  trip: 1
+
+two:
+  user: MyString
+  room: 1
+  trip: 1

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @reservation.user.fname + " " + @reservation.user.lname %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @reservation.room.Name %>
+</p>
+
+<p>
+  <strong>Trip:</strong>
+  <%= @reservation.trip.boat.Name %>
+  <%= @reservation.trip.DeptDate %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>

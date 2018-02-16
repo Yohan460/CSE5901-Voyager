@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Room</th>
+      <th>Boat</th>
+      <th>Trip</th>
+      <th>Dates</th>
+      <th>Cancel</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @reservations.each do |res| %>
+    <tr>
+      <td><%= res.room.Name %></td>
+      <td><%= res.trip.boat.Name %></td>
+      <td><%= res.trip.DeptPort.location %> -> <%= res.trip.ArrPort.location %></td>
+      <td><%= res.trip.DeptDate %> - <%= res.trip.ArrDate %></td>
+      <td><%= link_to 'Cancel Reservation', res, method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

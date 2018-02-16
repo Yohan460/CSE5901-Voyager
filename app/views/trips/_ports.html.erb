@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>PortID</th>
+      <th>PortName</th>
+      <th>Location</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @ports.each do |port| %>
+    <tr>
+      <td><%= port.id %></td>
+      <td><%= port.name %></td>
+      <td><%= trip.location.location %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
